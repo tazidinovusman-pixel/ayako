@@ -9,9 +9,9 @@ import CartModal from './components/CartModal';
 import { initialProducts } from './data/defaultProducts';
 
 export default function App() {
-  // Товары магазина
+  // Товары магазина (Обновили ключ на ayako_products_v2, чтобы применить новые фото из Pinterest)
   const [products, setProducts] = useState(() => {
-    const saved = localStorage.getItem('ayako_products');
+    const saved = localStorage.getItem('ayako_products_v2');
     return saved ? JSON.parse(saved) : initialProducts;
   });
 
@@ -31,7 +31,7 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('ayako_products', JSON.stringify(products));
+    localStorage.setItem('ayako_products_v2', JSON.stringify(products));
   }, [products]);
 
   useEffect(() => {
